@@ -11,7 +11,6 @@ import java.util.Set;
 
 @Entity
 @Data
-@AllArgsConstructor
 @ToString
 @EqualsAndHashCode(exclude = {"title","isbn","publisher","authors"})
 public class Book {
@@ -21,7 +20,9 @@ public class Book {
     private Long id;
     private String title;
     private String isbn;
-    private String publisher;
+
+    @OneToOne
+    private Publisher publisher;
 
     @ManyToMany
     @JoinTable(name = "author_book", joinColumns = @JoinColumn(name = "book_id"),

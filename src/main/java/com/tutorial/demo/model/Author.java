@@ -11,7 +11,6 @@ import java.util.Set;
 
 @Entity
 @Data
-@AllArgsConstructor
 @ToString
 @EqualsAndHashCode(exclude = {"firstName","lastName","books"})
 public class Author {
